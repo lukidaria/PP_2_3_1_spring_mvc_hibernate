@@ -74,6 +74,7 @@ public class HiberConfig {
         props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
         props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        props.put("spring.mvc.hiddenmethod.filter.enabled",env.getProperty("spring.mvc.hiddenmethod.filter.enabled"));
         return props;
     }
 

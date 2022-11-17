@@ -18,7 +18,7 @@
     </thead>
     <tbody>
     <tr th:each="user: ${users}">
-<!--        <td th:text="${user.getId()}"></td>-->
+        <td th:hidden="${user.getId()}"></td>
         <td th:text="${user.getName()}"/>
         <td th:text="${user.getLastName()}"/>
         <td th:text="${user.getAge()}"/>

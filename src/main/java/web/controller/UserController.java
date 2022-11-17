@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class UserController {
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserServiceImpl userService) {
@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @PostMapping("/saveUser")
-    public String saveEmployee(@ModelAttribute("user") User user) {
+    public String saveEmployee(User user) {
         userService.add(user);
         return "redirect:/";
     }
@@ -54,17 +54,19 @@ public class UserController {
 
     @GetMapping("/updateUser/{id}")
     public String updateUserForm(@PathVariable("id") Long id, Model model) {
-        User user = userService.getUser(id);
-        model.addAttribute("user", user);
+        User userForm = userService.getUser(id);
+        model.addAttribute("userForm", userForm);
+        System.out.println("da!!!");
         return "users_update";
+
 
     }
 
-    @PatchMapping("/{id}")
-    public String updateUser(@ModelAttribute("user") User user,
-                             @PathVariable("id") Long id) {
-
+    @PostMapping("/update")
+    public String updateUser(User user) {
+        System.out.println("nooo!!!");
         userService.update(user);
+        System.out.println("yees!!!");
         return "redirect:/";
     }
 

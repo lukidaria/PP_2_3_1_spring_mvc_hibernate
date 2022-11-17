@@ -2,25 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Users-info</title>
+    <meta charset="UTF-8">
+    <title>Users-info</title>
 </head>
 <body>
 
 <form th:action="@{/saveUser}" th:object="${user}" th:method="post">
-<!--  <hidden path="id"/>-->
-<!--  <input type="text" th:hidden="${user.id}" name="id">-->
-  Name: <input type="text" th:value="${user.name}" name="name"></input>
+    <!--  <hidden path="id"/>-->
+    <!--  <input type="text" th:hidden="${user.id}" name="id">-->
+    Name: <input type="text" th:value="${user.name}" name="name"></input>
 
-<!--  <input path="name"/>-->
-  <br><br>
-  Last Name: <input type="text" th:value="${user.lastName}" name="lastName"></input>
-<!--  <input path="last_name"/>-->
-  <br><br>
-  Age: <input type="text" th:value="${user.age}" name="age"></input>
-<!--  <input path="age"/>-->
-  <br><br>
-  <input  class="button button-block" type="submit" value="OK">
+    <br><br>
+    Last Name: <input type="text" th:value="${user.lastName}" name="lastName"></input>
+    <br><br>
+    Age: <input type="text" th:value="${user.age}" name="age"></input>
+    <br><br>
+    <input class="button button-block" type="submit" value="OK">
 
 </form>
 

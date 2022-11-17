@@ -44,20 +44,20 @@ public class UserDAOImpl implements UserDao {
     @Override
     @Transactional
     public void update(User user) {
-        User userToBeUpdated = getUser(user.getId());
-        userToBeUpdated.setId(user.getId());
-        userToBeUpdated.setAge(user.getAge());
-        userToBeUpdated.setName(user.getName());
-        userToBeUpdated.setLastName(user.getLastName());
+        User entity = getUser(user.getId());
 
-        entityManager.merge(userToBeUpdated);
+        entity.setId(user.getId());
+        entity.setName(user.getName());
+        entity.setLastName(user.getLastName());
+        entity.setAge(user.getAge());
+
+//        entityManager.merge(userToBeUpdated);
     }
 
     @Override
     @SuppressWarnings("unchecked")
     @Transactional(readOnly = true)
     public List<User> getAllUsers() {
-        //TypedQuery<User> query = entityManager.createQuery("from User").getResultList();
-        return entityManager.createQuery("from User").getResultList();
+       return entityManager.createQuery("from User").getResultList();
     }
 }
