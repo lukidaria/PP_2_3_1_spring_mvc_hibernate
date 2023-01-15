@@ -1,18 +1,20 @@
 package web.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import web.DAO.UserDao;
+import org.springframework.stereotype.Service;
+import web.dao.UserDao;
 import web.model.User;
 
 import java.util.List;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+    private final UserDao userDao;
+
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public User add(User user) {
@@ -27,7 +29,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long userId) {
         userDao.delete(userId);
-
     }
 
     @Override

@@ -6,11 +6,10 @@
     <title>Users</title>
 </head>
 <body>
-<!--<h1 th:text="${something}"/>-->
 <table class="table table-dark">
     <thead>
     <tr>
-<!--        <th>Id</th>-->
+        <!--        <th>Id</th>-->
         <th>Name</th>
         <th>LastName</th>
         <th>Age</th>
@@ -18,18 +17,17 @@
     </thead>
     <tbody>
     <tr th:each="user: ${users}">
-        <td th:hidden="${user.getId()}"></td>
         <td th:text="${user.getName()}"/>
         <td th:text="${user.getLastName()}"/>
         <td th:text="${user.getAge()}"/>
         <td>
             <form th:action="@{/delete/{id}(id=${user.id})}" th:method="get">
-                <input  class="button button-block"  type="submit" value="Delete user"/>
+                <input class="button button-block" type="submit" value="Delete user"/>
             </form>
         </td>
         <td>
             <form th:action="@{/updateUser/{id}(id=${user.getId()})}" th:method="get">
-                <input  class="button button-block" type="submit" value="Update user"/>
+                <input class="button button-block" type="submit" value="Update user"/>
             </form>
         </td>
 
@@ -39,7 +37,7 @@
 <br><br>
 
 <form th:action="@{/add}" th:method="get">
-    <input  class="button button-block" type="submit" value="Add user"/>
+    <input class="button button-block" type="submit" value="Add user"/>
 </form>
 <br>
 <br>

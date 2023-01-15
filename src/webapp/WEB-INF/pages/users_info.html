@@ -10,12 +10,12 @@
 <form th:action="@{/saveUser}" th:object="${user}" th:method="post">
     <!--  <hidden path="id"/>-->
     <!--  <input type="text" th:hidden="${user.id}" name="id">-->
-    Name: <input type="text" th:value="${user.name}" name="name"></input>
+    Name: <input type="text" th:value="${user.name}" name="name"/>
 
     <br><br>
-    Last Name: <input type="text" th:value="${user.lastName}" name="lastName"></input>
+    Last Name: <input type="text" th:value="${user.lastName}" name="lastName"/>
     <br><br>
-    Age: <input type="text" th:value="${user.age}" name="age"></input>
+    Age: <input type="text" th:value="${user.age}" name="age"/>
     <br><br>
     <input class="button button-block" type="submit" value="OK">
 

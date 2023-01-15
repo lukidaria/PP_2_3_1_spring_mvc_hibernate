@@ -8,7 +8,7 @@
 <body>
 
 <form th:action="@{/update}" th:object="${userForm}" th:method="post">
-    <input type="text" th:hidden="*{id}" name="id"/>
+    <input type="hidden" th:field="*{id}" name="id"/>
     Name: <input type="text" th:field="*{name}" name="name"/>
     <br><br>
     Last Name: <input type="text" th:field="*{lastName}" name="lastName"/>

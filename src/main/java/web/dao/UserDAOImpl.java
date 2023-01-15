@@ -1,7 +1,6 @@
-package web.DAO;
+package web.dao;
 
 
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
@@ -45,13 +44,12 @@ public class UserDAOImpl implements UserDao {
     @Transactional
     public void update(User user) {
         User entity = getUser(user.getId());
-
         entity.setId(user.getId());
         entity.setName(user.getName());
         entity.setLastName(user.getLastName());
         entity.setAge(user.getAge());
 
-//        entityManager.merge(userToBeUpdated);
+//        entityManager.merge(entity);
     }
 
     @Override
